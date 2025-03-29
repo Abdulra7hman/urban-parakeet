@@ -1,0 +1,286 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: changa;
+    
+}
+
+
+
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.navbar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0; 
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.2s;
+
+}
+
+@keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-right: 35px;
+    
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s; /* very important! */
+}
+
+.navbar ul li:hover a, .navbar ul li.active a  {
+    
+    color: rgb(126, 126, 126)
+}
+
+
+
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    gap: 50px;
+    padding: 60px 9% 0;
+    color: white;
+    visibility: hidden;
+    opacity: 0; 
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.2s;
+
+}
+
+
+.home-info h1 {
+        font-size: 55px
+    
+}
+
+
+.home-info h2 {
+    display: inline-block;
+
+    font-size: 35px;
+    margin-top: -10px;
+}
+
+.home-info p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.home-info h2 span {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px goldenrod;
+   animation: display-text 16s linear infinite; 
+    animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+
+    25%,
+    100% {
+        display: none;
+    }
+    
+}
+
+
+.home-info h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    color: goldenrod;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s linear infinite;
+    
+}
+
+@keyframes fill-text { 
+
+    10%, 100% {
+        width: 0;
+    }
+
+    70%, 90% {
+        width: 100%;
+    }
+    
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: goldenrod;
+     border: 2px solid goldenrod;
+     border-radius: 40px;
+     box-shadow: 0 0 10px goldenrod;
+     font-size: 16px;
+     color: white;
+     font-weight: 600;
+     
+     transition: 0.5s;
+
+
+}
+
+.btn:hover {
+    background: transparent;
+    box-shadow: none;
+}
+
+.home-info .btn-sci .sci {
+    margin-right: 20px;
+}
+
+.home-info .btn-sci .sci a{
+    display: inline-flex;  
+    padding: 8px;
+    border: 2px solid goldenrod;
+    border-radius: 50%;  
+    color: gold;
+    margin: 0 8px;
+    transition: 0.5s;
+}
+
+
+.home-info .btn-sci .sci a:hover{
+    background: goldenrod;
+    color: black;
+    box-shadow: 0 0 10px goldenrod;
+}
+
+
+.home-img .img-box {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 32vw;
+    height: 32vw;
+    
+    
+    border-radius: 50%;    
+    padding: 6x;       
+    overflow: hidden;
+}
+
+.home-img .img-box::before  {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, goldenrod);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+
+}
+
+
+@keyframes rotate-border {
+    100% {
+        transform:  rotate(360deg);;
+    }
+    
+}
+
+
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+    
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 50%;  
+}
+
+
+.home-img .img-box .img-item img {
+    display: block;
+    width: 85%;
+    object-fit: cover;
+}
+
+.home-img .img-box .img-item img {
+
+display: block;
+width: 85%;
+object-fit: cover;
+mix-blend-mode: darken;
+}
+
+.bars-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+
+
+.bars-animation .bar {
+    width: 100%;
+    height: 100%;
+    background: black;
+    transform: translateY(-100%);
+    animation: show-bars 0.5s ease-in-out forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+
+@keyframes show-bars {
+    100% {
+        transform: translateY(0%);
+    }
+    
+}
