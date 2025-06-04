@@ -47,8 +47,11 @@ a {
     }
 
     .home-info h2 {
-        font-size: 24px;
-    }
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
 
     .home-img .img-box {
         width: 65vw;
