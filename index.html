@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
    
 </head>
+
+
 <body>
     
 <nav class="navbar"> 
@@ -90,7 +92,7 @@
         <div class="img-box">
 
             <div class="img-item">
-                <img src="myprofile2.jpg" alt="">
+                <img src="myprofile2.png" alt="">
             </div>
         </div>
     </div>
@@ -98,4 +100,17 @@
 
 
 </body>
+<script>
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY === 0) {
+            navbar.style.display = 'flex'; // Show navbar at top
+        } else {
+            navbar.style.display = 'none'; // Hide on any scroll
+        }
+    });
+</script>
+
+
 </html>
